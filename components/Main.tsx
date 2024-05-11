@@ -60,20 +60,42 @@ const MainContent = () => {
 
       <View style={styles.centerDiv}>
         {!state.result ? (
-          <View>
-            <Text>Ask the Magic Ball any guestion</Text>
+          <View
+            style={{
+              alignItems: 'center',
+            }}>
+            <Text
+              style={{
+                ...styles.textWhite,
+                ...styles.bigText,
+              }}>
+              Ask the Magic Ball any guestion
+            </Text>
             <TouchableOpacity
-              style={{backgroundColor: 'red', padding: 10}}
+              style={styles.button}
               onPress={handleButtonClicked}>
-              <Text>Click to find out</Text>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  ...styles.textWhite,
+                }}>
+                Click to find out
+              </Text>
             </TouchableOpacity>
           </View>
         ) : (
           <View>
-            <Text>This is what I think!</Text>
+            <Text style={{
+              textAlign
+            }}>This is what I think!</Text>
             <Text>{state.answer}</Text>
-            <TouchableOpacity onPress={handleButtonClicked}>
-              <Text>Ask another question</Text>
+            <TouchableOpacity
+              style={{
+                backgroundColor: 'red',
+                padding: '10',
+              }}
+              onPress={handleButtonClicked}>
+              <Text style={styles.textWhite}>Ask another question</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -96,11 +118,32 @@ const styles = StyleSheet.create({
     fontFamily: 'Caveat-Regular',
     color: 'white',
   },
+  textWhite: {
+    color: 'white',
+  },
+  bigText: {
+    fontSize: 24,
+  },
+  smallText: {
+    fontSize: 18,
+  },
+  button: {
+    backgroundColor: '#E72929',
+    borderColor: 'white',
+    borderRadius: 20,
+    padding: 10,
+    borderWidth: 2,
+    marginTop: 10,
+    color: 'white',
+    width: 150,
+  },
   centerDiv: {
     height: '100%',
+    width: '100%',
     position: 'absolute',
-    marginBottom: 10,
+    paddingBottom: 100,
     zIndex: 10,
+    color: 'white',
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
